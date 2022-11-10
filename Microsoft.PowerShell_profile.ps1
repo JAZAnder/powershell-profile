@@ -144,7 +144,7 @@ function lazyg
 	git push
 }
 
-function autolazyg
+function autog
 {
 	git add .
 	git commit -m "Automated Commit"
