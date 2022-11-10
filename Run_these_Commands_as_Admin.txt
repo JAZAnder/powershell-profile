@@ -1,0 +1,5 @@
+Run these Commands as Admin in this Directory
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+Copy-Item ".\Microsoft.PowerShell_profile.ps1" -Destination $profile

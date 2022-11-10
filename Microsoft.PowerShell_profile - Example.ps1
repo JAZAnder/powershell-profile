@@ -25,10 +25,20 @@ function cd...  { Set-Location ..\.. }
 function cd.... { Set-Location ..\..\.. }
 function ~ { Set-Location ~}
 
+# Compute file hashes - useful for checking successful downloads 
+function md5    { Get-FileHash -Algorithm MD5 $args }
+function sha1   { Get-FileHash -Algorithm SHA1 $args }
+function sha256 { Get-FileHash -Algorithm SHA256 $args }
+
 # Quick shortcut to start notepad
 function n      { notepad $args }
 function n++ { start notepad++ $args }
 function n+ { start notepad++ }
+
+# Drive shortcuts
+function HKLM:  { Set-Location HKLM: }
+function HKCU:  { Set-Location HKCU: }
+function Env:   { Set-Location Env: }
 
 
 # Set up command prompt and window title. Use UNIX-style convention for identifying 
@@ -131,6 +141,7 @@ if (Test-CommandExists nvim) {
 Set-Alias -Name vim -Value $EDITOR
 
 
+function ll { Get-ChildItem -Path $pwd -File }
 function g { Set-Location $HOME\Documents\Github }
 function gcom
 {
@@ -143,14 +154,6 @@ function lazyg
 	git commit -m "$args"
 	git push
 }
-
-function autolazyg
-{
-	git add .
-	git commit -m "Automated Commit"
-	git push
-}
-
 Function Get-PubIP {
  (Invoke-WebRequest http://ifconfig.me/ip ).Content
 }
@@ -199,4 +202,18 @@ function pkill($name) {
 }
 function pgrep($name) {
         Get-Process $name
+}
+
+
+## Final Line to set prompt
+oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
+
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
 }
