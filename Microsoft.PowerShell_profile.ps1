@@ -137,7 +137,7 @@ function gcom
 	git add .
 	git commit -m "$args"
 }
-function lazyg
+function glazy
 {
 	git add .
 	git commit -m "$args"
