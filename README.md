@@ -5,4 +5,4 @@
 Run ``` RunMe.ps1 ``` 
 
 If you get an Error Saying " " copy and paste this command 
-" Set-ExecutionPolicy -ExecutionPolicy RemoteSigned " as Admin
+``` Set-ExecutionPolicy -ExecutionPolicy RemoteSigned ``` as Admin
