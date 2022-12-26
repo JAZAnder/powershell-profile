@@ -63,6 +63,7 @@ elseif (4 -eq $Option) {
     $Option2 = Read-Host -Prompt 'Enter Your Choice '
     if ($Option2 -eq 1) {
         Copy-Item ".\Options\Oh My Posh and Neofetch\OMP and Neofetch.ps1" -Destination $profile
+        $LoopBack = $false
     }
     elseif ($Option2 -eq 2) {
         #Download Neofetch
