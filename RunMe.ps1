@@ -37,7 +37,7 @@ elseif (2 -eq $Option) {
 elseif (3 -eq $Option) {
     Write-Output "Pick A Following Action `n 
             
-        1 : Josh's Basic Profile with Neofetch`n 
+        1 : Use Josh's Basic Profile with Neofetch`n 
         2 : Install Neofetch`n
         3 : Return`n
         10 : Exit `n"
@@ -55,7 +55,7 @@ elseif (3 -eq $Option) {
 elseif (4 -eq $Option) {
     Write-Output "Pick A Following Action `n 
             
-    1 : Josh's Basic Profile with Oh-My_Posh and Neofetch`n 
+    1 : Use Josh's Basic Profile with Oh-My_Posh and Neofetch`n 
     2 : Install Neofetch`n
     3 : Install Oh-My-Post`n
     4 : Return`n
