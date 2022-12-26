@@ -13,7 +13,8 @@ $LoopBack = $true
 if ( 1 -eq $Option )
 {
     Write-Output "You Choice Option 1"
-    Copy-Item ".\Options\Microsoft.PowerShell_profile.ps1" -Destination $profile
+    Copy-Item ".\Options\Basic.ps1" -Destination $profile
+    $LoopBack = $false
 }
 elseif (2 -eq $Option) {
     Write-Output "Pick A Following Action `n 
@@ -61,7 +62,7 @@ elseif (4 -eq $Option) {
     10 : Exit `n"
     $Option2 = Read-Host -Prompt 'Enter Your Choice '
     if ($Option2 -eq 1) {
-        #Copy with Oh-My-Posh and Neofetch
+        Copy-Item ".\Options\Oh My Posh and Neofetch\OMP and Neofetch.ps1" -Destination $profile
     }
     elseif ($Option2 -eq 2) {
         #Download Neofetch
